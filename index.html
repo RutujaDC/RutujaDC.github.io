@@ -1,138 +1,3543 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutuja D Chikkorde - AWS Solutions Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rutuja D Chikkorde -portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+  </head>
 
-        header {
-            background: linear-gradient(to right, #543310,#74512D);
-            color: #fff;
-            text-align: center;
-            padding: 2em 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+  <style>
+    @font-face {
+  font-family: troika;
+  src: url(./troika.otf);
+}
+@font-face {
+  font-family: PP mori;
+  src: url(./ppmori.ttf);
+}
+@font-face {
+  font-family: bebas;
+  src: url(./BebasNeue-Regular.otf);
+}
+@font-face {
+  font-family: broaek;
+  src: url(./Broaek-\ Regular.ttf);
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-family: Georgia, serif;
-            letter-spacing: 1px;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: PP mori;
+  color: #fff;
+}
 
-        main {
-            padding: 2em;
-        }
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#purple {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  background-color: #edbfff;
+  opacity: 0;
+  display: none;
+  transition: opacity ease 1s;
+}
+.cursor {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: fixed;
+  background-color: #edbfff;
+  z-index: 8;
+  transition: background-image ease 0.5s;
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: difference;
+}
+.main {
+  background-color: #0f0d0d;
+  cursor: none;
+}
 
-        section {
-            margin-bottom: 2em;
-        }
+.page1 {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+  padding-top: 12vw;
+}
 
-        h2, h3 {
-            color: #333;
-        }
+#nav {
+  height: 55px;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 102;
+}
+#nav img {
+  height: 27px;
+}
+#nav-part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
-        p {
-            color: #555;
-        }
+#nav #circle {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+#nav h4 {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+#nav h4:nth-child(1) {
+  border-bottom: 1.5px solid #fff;
+}
 
-        a {
-            color: #0099ff;
-            text-decoration: none;
-        }
+.page1 h1 {
+  font-size: 12vw;
+  font-weight: 300;
+  font-family: troika;
 
-        a:hover {
-            text-decoration: underline;
-        }
+  margin-left: 10vw;
+  transform-origin: left;
+}
+.page1 h2 {
+  font-size: 12vw;
+  font-weight: 300;
+  transform-origin: left;
+  font-family: troika;
+  margin-left: 35vw;
+}
 
-        .course-info {
-            background-color: #f4f4f4;
-            padding: 1em;
-            border-radius: 5px;
-            margin-bottom: 2em;
-        }
+.page1 video {
+  width: 60%;
+  margin-top: 1vw;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
 
-        .course-info h2 {
-            margin-top: 0;
-        }
+.page2 {
+  min-height: 80vh;
+  width: 100%;
+  padding: 100px 5vw;
+  border-bottom: 2px solid #6c6c6c;
+  position: relative;
+  z-index: 9;
+}
 
-        .course-info p {
-            margin: 0.5em 0;
-        }
+.page2 h1 {
+  font-size: 7vw;
+  font-family: broaek;
+  font-weight: 500;
+  color: #111;
+}
+.page2-container {
+  height: 60vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 0 5vw; */
+}
+.page2-left {
+  /* background-color: blue; */
+  width: 40%;
+}
+.page2-right {
+  /* background-color: blue; */
+  width: 24%;
+}
+.page2-left p {
+  font-size: 1vw;
+  font-weight: 300;
+  color: #111;
+  line-height: 4vw;
+}
+.page2-right p {
+  font-size: 28px;
+  color: #111;
+}
+.page2-right button {
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  padding: 4px 0;
+  background-color: #edbfff;
+  color: #111;
+  margin-top: 20px;
+}
 
-        .problem-solution {
-            margin-bottom: 2em;
-            padding: 1em;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+.page3 {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  position: relative;
+  z-index: 9;
+}
 
-        .problem-solution h3 {
-            margin-top: 0;
-        }
+.page3 h1 {
+  font-size: 6.8vw;
+  font-weight: 300;
+  color: #111;
+  margin-left: 100px;
+}
+.page3-part1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.page3-part1 img {
+  height: 400px;
+  margin-top: 160px;
+}
+.page3-part1 video {
+  height: 400px;
+  margin-top: 40px;
+}
+.page4 {
+  /* min-height: 100vh; */
+  min-height: 100%;
+  width: 100%;
+  z-index: 999;
+  position: relative;
+  padding: 170px 100px;
+}
+.elem {
+  /* background-color: salmon; */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.elem img {
+  position: absolute;
+  opacity: 0;
+  transition: all ease-out 0.5s;
+  transform: translateY(10%) rotate(2deg);
+}
+.elem img:nth-child(1) {
+  left: 2%;
+}
+.elem img:nth-child(3) {
+  right: 5%;
+}
+.text-div {
+  height: 16vh;
+  position: relative;
+  z-index: 9;
+  overflow: hidden;
+}
+.elem h1 {
+  font-size: 7.5vw;
+  font-weight: 600;
+  transition: all ease-out 0.5s;
+}
 
-        .problem-solution p {
-            margin-bottom: 1em;
-        }
+.elem:hover h1 {
+  transform: translateY(-100%);
+  color: #edbfff;
+}
+.elem:hover img {
+  opacity: 1;
+  transform: translateY(0%) rotate(0deg);
+}
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>AWS Solutions Portfolio</h1>
-    </header>
-    <main>
-        <section id="introduction">
-            <h2>About Me</h2>
-            <p>Hello! I'm Rutuja D Chikkorde, a passionate developer with a focus on solving real-world problems through code. This portfolio showcases my solutions to complex challenges, specifically targeting AWS-related problems using advanced Data Structures and Algorithms (DSA). I leverage dynamic programming for problems like Longest Common Subsequence and Subset Sum, explore various tree structures like AVL and Red Black Trees, and tackle mathematical concepts such as Fermat's Little Theorem and Catalan Numbers. Additionally, I implement advanced algorithms including A* Search, Kadane's Algorithm, and Segment Trees. My portfolio also covers essential graph algorithms and principles like Lazy Propagation and Sliding Window. Each solution is accompanied by sample code and explanations, demonstrating how I apply these concepts to create efficient and scalable solutions.</p>
-        </section>
+.page5 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+  padding: 140px 100px;
+}
+.page5 h2 {
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+.box {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 20px;
+  border-top: 2px solid #dadada;
+}
 
-        <section class="course-info">
-            <h2>Course Information</h2>
-            <p><strong>Course Name:</strong> Algorithmic Problem Solving</p>
-            <p><strong>Course Code:</strong> 23ECSE309</p>
-            <p><strong>Name:</strong> Rutuja D Chikkorde</p>
-            <p><strong>University:</strong> KLE Technological University, Hubballi</p>
-        </section>
+.box:nth-last-child(1) {
+  border-bottom: 2px solid #dadada;
+}
 
-        <section id="projects">
-            <h2>Project Solutions</h2>
-            
-            <article class="problem-solution">
-                <h3>Problem 1 - Build for Scalability</h3>
-                <p>One of my apps crashed just as it started gaining traction because the backend couldn’t handle the load. Plan for success from the start. Use scalable infrastructure like AWS, Azure, or Google Cloud. Optimize your code to handle growth smoothly.</p>
+footer {
+  height: 60vh;
+  width: 100%;
+  margin-top: -5vw;
+  background-color: #0f0d0d;
+}
+
+#second {
+  color: #fff;
+  padding-right: 10vw;
+  padding-top: 200px;
+  /* background-color: black; */
+  width: 100%;
+  min-height: 100%;
+  margin-left: 3.4vw;
+}
+
+.elements {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3.5vw 3vw;
+  padding-right: 0;
+  border-top: 1px solid #888;
+}
+
+.elements h1 {
+  text-transform: uppercase;
+  font-size: 4.6vw;
+  opacity: 0.7;
+}
+
+/* .elemlast {
+  border-bottom: 1px solid #888;
+} */
+
+.elements img {
+  opacity: 0;
+  pointer-events: none;
+  height: 110%;
+  z-index: 999;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+/* .extra {
+  display: flex;
+  flex-direction: row;
+} */
+.extra h2,
+.extra h3,
+.extra h4,
+.extra h5 {
+  color: #7d7575; /* Dark grey text color */
+  font-size: 1.9vw;
+  font-family: troika;
+  font-weight: 500;
+}
+.extra h3,
+.extra h4 {
+  margin-top: 2vw;
+}
+.extra h5 {
+  margin-top: 2vw;
+}
+
+.extra p {
+  line-height: 1.6; /* Increase line height for better readability */
+  color: #555; /* Medium grey text color */
+  font-size: 1.1vw;
+  text-align: justify;
+  font-weight: 400;
+  margin-top: 2vw;
+  width: 32vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: initial;
+}
+
+.extra a {
+  color: #efefef; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.extra a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+.upside {
+  position: relative;
+  display: flex; /* Use flexbox to arrange children side-by-side */
+  justify-content: space-between; /* Space out children */
+  margin-bottom: 2vw; 
+  margin-left: 4vw;
+
+}
+.downside {
+  position: relative;
+  display: flex; /* Use flexbox to arrange children side-by-side */
+  justify-content: space-between; /* Space out children */
+  margin-bottom: 4vw; 
+  margin-left: 4vw;
+
+}
+.prob-desc {
+  
+  flex: 1; /* Each child takes up equal space */
+  margin-right: 20px; /* Space between columns */
+}
+.solution {
+  flex: 1; /* Each child takes up equal space */
+  margin-right: 20px; /* Space between columns */
+}
+.reference {
+  
+  flex: 1; /* Each child takes up equal space */
+  margin-right: 0px; /* Space between columns */
+}
+.algoused {
+  
+  flex: 1; /* Each child takes up equal space */
+  margin-right: 0px; /* Space between columns */
+}
+
+
+
+.page3 h1{
+    font-family: broaek;
+}
+
+.infocourse{
+    background-color: #ffffff;
+    padding: 4vw;
+    border-radius: 8vw;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 34vw;
+    text-align: justify;
+}
+
+
+.infocourse{
+    margin-top: 0vw;
+    margin-left: 54vw;
+}
+
+.course-info {
+    font-size: 1.4vw;
+    color: #555;
+    margin: 2vw 0;
+    
+}
+
+.course-info span {
+    display: block;
+    font-weight: 900;
+    color: #333;
+    animation: fadeIn 1.5s ease-in-out;
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+}
+
+
+
+
+
+
+.page14-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 5vw;
+    font-family: a;
+    height: 33.3%;
+    width: 100%;
+    color: #fff;
+    border-top: .5px solid #ffffff5c;
+    border-bottom: .5px solid #ffffff48;
+}
+
+.page14-inner>i {
+    font-weight: 100;
+    font-size: 2.4vw;
+    position: relative;
+    z-index: 9999;
+}
+
+.page14-inner>h1 {
+    font-size: 3vw;
+    font-weight: 100;
+    position: relative;
+    z-index: 9999;
+}
+
+.center14 {
+    height: 0%;
+    width: 100%;
+    background-color: #7e869f;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease .5s;
+}
+
+
+.page14-inner:hover .center14 {
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.animated-button {
+    background: linear-gradient(-30deg, #0b1b3d 50%, #08142b 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #d4e0f7;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #8592ad;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button span {
+    position: absolute;
+  }
+  
+  .animated-button span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    background: linear-gradient(to left, rgba(8, 20, 43, 0), #2662d9);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @-webkit-keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    background: linear-gradient(to top, rgba(8, 20, 43, 0), #2662d9);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @-webkit-keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    background: linear-gradient(to right, rgba(8, 20, 43, 0), #2662d9);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @-webkit-keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    background: linear-gradient(to bottom, rgba(8, 20, 43, 0), #2662d9);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @-webkit-keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button1 {
+    background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
+    padding: 15px 30px;
+    margin: 1px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #f7d4d4;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button1::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ad8585;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button1:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button1 span {
+    position: absolute;
+  }
+  
+  .animated-button1 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to left, rgba(43, 8, 8, 0), #d92626);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button1 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to top, rgba(43, 8, 8, 0), #d92626);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button1 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to right, rgba(43, 8, 8, 0), #d92626);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button1 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to bottom, rgba(43, 8, 8, 0), #d92626);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button2 {
+    background: linear-gradient(-30deg, #3d240b 50%, #2b1a08 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #f7e6d4;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button2::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ad9985;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button2:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button2 span {
+    position: absolute;
+  }
+  
+  .animated-button2 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(43, 26, 8, 0)), to(#d98026));
+    background: linear-gradient(to left, rgba(43, 26, 8, 0), #d98026);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button2 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 26, 8, 0)), to(#d98026));
+    background: linear-gradient(to top, rgba(43, 26, 8, 0), #d98026);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button2 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(43, 26, 8, 0)), to(#d98026));
+    background: linear-gradient(to right, rgba(43, 26, 8, 0), #d98026);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button2 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 26, 8, 0)), to(#d98026));
+    background: linear-gradient(to bottom, rgba(43, 26, 8, 0), #d98026);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button3 {
+    background: linear-gradient(-30deg, #3d3d0b 50%, #2b2b08 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #f7f7d4;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button3::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #adad85;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button3:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button3 span {
+    position: absolute;
+  }
+  
+  .animated-button3 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(43, 43, 8, 0)), to(#d9d926));
+    background: linear-gradient(to left, rgba(43, 43, 8, 0), #d9d926);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button3 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 43, 8, 0)), to(#d9d926));
+    background: linear-gradient(to top, rgba(43, 43, 8, 0), #d9d926);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button3 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(43, 43, 8, 0)), to(#d9d926));
+    background: linear-gradient(to right, rgba(43, 43, 8, 0), #d9d926);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button3 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 43, 8, 0)), to(#d9d926));
+    background: linear-gradient(to bottom, rgba(43, 43, 8, 0), #d9d926);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button4 {
+    background: linear-gradient(-30deg, #243d0b 50%, #1a2b08 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #e6f7d4;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button4::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #99ad85;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button4:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button4 span {
+    position: absolute;
+  }
+  
+  .animated-button4 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(26, 43, 8, 0)), to(#80d926));
+    background: linear-gradient(to left, rgba(26, 43, 8, 0), #80d926);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button4 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 43, 8, 0)), to(#80d926));
+    background: linear-gradient(to top, rgba(26, 43, 8, 0), #80d926);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button4 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(26, 43, 8, 0)), to(#80d926));
+    background: linear-gradient(to right, rgba(26, 43, 8, 0), #80d926);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button4 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 43, 8, 0)), to(#80d926));
+    background: linear-gradient(to bottom, rgba(26, 43, 8, 0), #80d926);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button5 {
+    background: linear-gradient(-30deg, #0b3d0b 50%, #082b08 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #d4f7d4;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button5::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #85ad85;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button5:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button5 span {
+    position: absolute;
+  }
+  
+  .animated-button5 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(8, 43, 8, 0)), to(#26d926));
+    background: linear-gradient(to left, rgba(8, 43, 8, 0), #26d926);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button5 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 43, 8, 0)), to(#26d926));
+    background: linear-gradient(to top, rgba(8, 43, 8, 0), #26d926);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button5 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(8, 43, 8, 0)), to(#26d926));
+    background: linear-gradient(to right, rgba(8, 43, 8, 0), #26d926);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button5 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 43, 8, 0)), to(#26d926));
+    background: linear-gradient(to bottom, rgba(8, 43, 8, 0), #26d926);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button6 {
+    background: linear-gradient(-30deg, #0b3d24 50%, #082b1a 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #d4f7e6;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button6::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #85ad99;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button6:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button6 span {
+    position: absolute;
+  }
+  
+  .animated-button6 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(8, 43, 26, 0)), to(#26d980));
+    background: linear-gradient(to left, rgba(8, 43, 26, 0), #26d980);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button6 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 43, 26, 0)), to(#26d980));
+    background: linear-gradient(to top, rgba(8, 43, 26, 0), #26d980);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button6 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(8, 43, 26, 0)), to(#26d980));
+    background: linear-gradient(to right, rgba(8, 43, 26, 0), #26d980);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button6 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 43, 26, 0)), to(#26d980));
+    background: linear-gradient(to bottom, rgba(8, 43, 26, 0), #26d980);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button7 {
+    background: linear-gradient(-30deg, #0b3d3d 50%, #082b2b 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #d4f7f7;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button7::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #85adad;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button7:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button7 span {
+    position: absolute;
+  }
+  
+  .animated-button7 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(8, 43, 43, 0)), to(#26d9d9));
+    background: linear-gradient(to left, rgba(8, 43, 43, 0), #26d9d9);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button7 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 43, 43, 0)), to(#26d9d9));
+    background: linear-gradient(to top, rgba(8, 43, 43, 0), #26d9d9);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button7 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(8, 43, 43, 0)), to(#26d9d9));
+    background: linear-gradient(to right, rgba(8, 43, 43, 0), #26d9d9);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button7 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 43, 43, 0)), to(#26d9d9));
+    background: linear-gradient(to bottom, rgba(8, 43, 43, 0), #26d9d9);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button8 {
+    background: linear-gradient(-30deg, #0b243d 50%, #081a2b 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #d4e6f7;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button8::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #8599ad;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button8:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button8 span {
+    position: absolute;
+  }
+  
+  .animated-button8 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+    background: linear-gradient(to left, rgba(8, 26, 43, 0), #2680d9);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button8 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+    background: linear-gradient(to top, rgba(8, 26, 43, 0), #2680d9);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button8 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+    background: linear-gradient(to right, rgba(8, 26, 43, 0), #2680d9);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button8 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 26, 43, 0)), to(#2680d9));
+    background: linear-gradient(to bottom, rgba(8, 26, 43, 0), #2680d9);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button9 {
+    background: linear-gradient(-30deg, #0b0b3d 50%, #08082b 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #d4d4f7;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button9::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #8585ad;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button9:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button9 span {
+    position: absolute;
+  }
+  
+  .animated-button9 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(8, 8, 43, 0)), to(#2626d9));
+    background: linear-gradient(to left, rgba(8, 8, 43, 0), #2626d9);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button9 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 8, 43, 0)), to(#2626d9));
+    background: linear-gradient(to top, rgba(8, 8, 43, 0), #2626d9);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button9 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(8, 8, 43, 0)), to(#2626d9));
+    background: linear-gradient(to right, rgba(8, 8, 43, 0), #2626d9);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button9 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 8, 43, 0)), to(#2626d9));
+    background: linear-gradient(to bottom, rgba(8, 8, 43, 0), #2626d9);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button10 {
+    background: linear-gradient(-30deg, #240b3d 50%, #1a082b 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #e6d4f7;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button10::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #9985ad;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button10:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button10 span {
+    position: absolute;
+  }
+  
+  .animated-button10 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(26, 8, 43, 0)), to(#8026d9));
+    background: linear-gradient(to left, rgba(26, 8, 43, 0), #8026d9);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button10 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 8, 43, 0)), to(#8026d9));
+    background: linear-gradient(to top, rgba(26, 8, 43, 0), #8026d9);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button10 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(26, 8, 43, 0)), to(#8026d9));
+    background: linear-gradient(to right, rgba(26, 8, 43, 0), #8026d9);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button10 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 8, 43, 0)), to(#8026d9));
+    background: linear-gradient(to bottom, rgba(26, 8, 43, 0), #8026d9);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button11 {
+    background: linear-gradient(-30deg, #3d0b3d 50%, #2b082b 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #f7d4f7;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button11::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ad85ad;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button11:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button11 span {
+    position: absolute;
+  }
+  
+  .animated-button11 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 43, 0)), to(#d926d9));
+    background: linear-gradient(to left, rgba(43, 8, 43, 0), #d926d9);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button11 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 43, 0)), to(#d926d9));
+    background: linear-gradient(to top, rgba(43, 8, 43, 0), #d926d9);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button11 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 43, 0)), to(#d926d9));
+    background: linear-gradient(to right, rgba(43, 8, 43, 0), #d926d9);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button11 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 43, 0)), to(#d926d9));
+    background: linear-gradient(to bottom, rgba(43, 8, 43, 0), #d926d9);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  .animated-button12 {
+    background: linear-gradient(-30deg, #3d0b24 50%, #2b081a 50%);
+    padding: 20px 40px;
+    margin: 12px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: #f7d4e6;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button12::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ad8599;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+  }
+  
+  .animated-button12:hover::before {
+    opacity: 0.2;
+  }
+  
+  .animated-button12 span {
+    position: absolute;
+  }
+  
+  .animated-button12 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 26, 0)), to(#d92680));
+    background: linear-gradient(to left, rgba(43, 8, 26, 0), #d92680);
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  
+  .animated-button12 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 26, 0)), to(#d92680));
+    background: linear-gradient(to top, rgba(43, 8, 26, 0), #d92680);
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  .animated-button12 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 26, 0)), to(#d92680));
+    background: linear-gradient(to right, rgba(43, 8, 26, 0), #d92680);
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  
+  .animated-button12 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 26, 0)), to(#d92680));
+    background: linear-gradient(to bottom, rgba(43, 8, 26, 0), #d92680);
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  </style>
+  <body>
+    <div class="cursor"></div>
+    
+    <div id="purple"></div>
+    <div class="main">
+      <div class="page1">
+        <h1>NETWORKING</h1>
+        <h2>SOLUTIONS</h2>
+        <video
+          autoplay
+          muted
+          loop
+          src="https://duo-studio.co/assets/home/Duo%20Reel--Desktop-reduced.mp4"
+        ></video>
+      </div>
+      <div class="page2">
+        <h1>About Me</h1>
+        
+        <div class="page2-container">
+            <h4
+            style=" color: #000; font-size: 22px; font-weight: 400; position: absolute; top: 318px; left: 123px; line-height: 35px; text-align: justify; width: 80vw;">
+            Hello! I'm <span class="spannedelem" style="color: #000; font-weight: 700; font-size: 2vw;">Rutuja D Chikkorde</span>, a passionate <span
+                class="spannedelem" style="color: #000; font-weight: 700; ">developer </span>with a focus on solving real-world problems through code. This portfolio
+            <span class="spannedelem" style="color: #000; font-weight: 700;"> </span> showcases my solutions to complex challenges, specifically targeting <span
+            class="spannedelem" style="color: #000; font-weight: 700; ">network-related problems </span> using advanced Data Structures and Algorithms (DSA). I leverage dynamic programming for problems like Longest Common Subsequence and Subset Sum, explore various tree structures like AVL and Red Black Trees, and tackle mathematical concepts such as Fermat's Little Theorem and Catalan Numbers. Additionally, I implement advanced algorithms including A* Search, Kadane's Algorithm, and Segment Trees. My portfolio also covers essential graph algorithms and principles like Lazy Propagation and Sliding Window. Each solution is accompanied by sample code and explanations, demonstrating how I apply these concepts to create efficient and scalable solutions.
+        </h4>
+        </div>
+      </div>
+      <div class="page3">
+        <h1>Course <br> Information</h1>
+        <div class="infocourse">
+        <div class="course-info">
+            <span style="font-size: 1.6vw;">Course Name:</span> <span style="font-weight: 300; margin-top: 1vw;">Algorithmic Problem Solving</span>
+        </div>
+        <div class="course-info">
+            <span>Course Code:</span> <span style="font-weight: 300; margin-top: 1vw;">23ECSE309</span>
+        </div>
+        <div class="course-info">
+            <span>Name:</span> <span style="font-weight: 300; margin-top: 1vw;">Rutuja D Chikkorde</span>
+        </div>
+        <div class="course-info">
+            <span>University:</span> <span style="font-weight: 300; margin-top: 1vw;">KLE Technological University, Hubballi</span>
+        </div>
+        <div class="course-info">
+          <span>Instructor:</span> <span style="font-weight: 300; margin-top: 1vw;">Prakash Hegade</span>
+      </div>
+        </div>
+    </div>
+      <div class="page4">
+        <h1 style="font-family: troika; font-size: 13vw; font-weight: 500;">PROJECTS...</h1>
+        <!-- <div class="elem">
+                <img src="https://d33wubrfki0l68.cloudfront.net/3401770635e95968e300d88f8b9479ecbc008eeb/be2e5/assets/home/home-experience-1.webp"
+                    alt="">
+                <div class="text-div">
+                    <h1>Strategy</h1>
+                    <h1>Strategy</h1>
+                </div>
+                <img src="https://d33wubrfki0l68.cloudfront.net/188bb09da2a445d08ac5b4f706711772e50e8a17/e100a/assets/home/home-experience-2.webp"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="https://d33wubrfki0l68.cloudfront.net/3401770635e95968e300d88f8b9479ecbc008eeb/be2e5/assets/home/home-experience-1.webp"
+                    alt="">
+                <div class="text-div">
+                    <h1>Strategy</h1>
+                    <h1>Strategy</h1>
+                </div>
+                <img src="https://d33wubrfki0l68.cloudfront.net/188bb09da2a445d08ac5b4f706711772e50e8a17/e100a/assets/home/home-experience-2.webp"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="https://d33wubrfki0l68.cloudfront.net/3401770635e95968e300d88f8b9479ecbc008eeb/be2e5/assets/home/home-experience-1.webp"
+                    alt="">
+                <div class="text-div">
+                    <h1>Strategy</h1>
+                    <h1>Strategy</h1>
+                </div>
+                <img src="https://d33wubrfki0l68.cloudfront.net/188bb09da2a445d08ac5b4f706711772e50e8a17/e100a/assets/home/home-experience-2.webp"
+                    alt="">
+            </div> -->
+        <div id="second">
+          <div class="elements">
+            <img src="./autoscaling.jpeg" alt="" />
+            <h1>Autoscaling Optimization in Cloud Computing</h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                  In cloud computing, autoscaling allows automatic adjustment of
+                  resources based on current demand, ensuring efficient resource
+                  usage and cost management. The challenge is to develop an
+                  optimized autoscaling policy that balances performance and
+                  cost, particularly for workloads with unpredictable spikes.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Knapsack</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Knapsack.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>Solution</h3>
+                <p>
+                  The solution involves using the knapsack algorithm to optimize
+                  autoscaling in cloud computing. The goal is to maximize
+                  performance within a given budget by selecting an optimal mix
+                  of instances. Each instance type has an associated cost and
+                  performance value. The algorithm determines the combination of
+                  instances that offers the highest performance without
+                  exceeding the budget.
+                </p>
+                <a
+                  href="https://aws.amazon.com/autoscaling/"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View AWS autoscaling
+                </a>
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  M. A. Rodriguez and R. Buyya, "A Responsive Knapsack-Based
+                  Algorithm for Resource Provisioning and Scheduling of
+                  Scientific Workflows in Clouds," 2015 44th International
+                  Conference on Parallel Processing, Beijing, China, 2015, pp.
+                  839-848, doi: 10.1109/ICPP.2015.93. keywords: {Cloud
+                  computing;Heuristic algorithms;Dynamic
+                  scheduling;Pipelines;Schedules;Algorithm design and analysis},
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/7349639?casa_token=hza9FZQayW0AAAAA:VQfloTweQ30zIR-b4EB-OkJ_-CzCq-4HzeSstBUGTKlwKbll1yv77F9Lu7m5cDn6HYMxES0kh55x"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="elements">
+            <img src="./databackup.jpg" alt="" />
+            <h1>Data Backup and recovery in Cloud Computing</h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                  Efficiently manage data backup in a network by determining the
+                  optimal paths for data transfer, minimizing costs and ensuring
+                  data integrity. Represent the network as a graph and compute
+                  the Minimum Spanning Tree (MST) to identify the most
+                  cost-effective routes. Use the MST to prioritize and execute
+                  backups, respecting data dependencies and reducing redundancy.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>
+                  Algorithm used : Kruskal's Algorithm & Union Find Root method
+                </h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Kruskals's%20Union_Find.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>Solution</h3>
+                <p>
+                  Compute the Minimum Spanning Tree (MST) of the network graph
+                  Kruskal's algorithm to find the optimal data transfer paths.
+                  Follow the MST structure to prioritize and execute backups,
+                  ensuring efficient use of resources and maintaining data
+                  integrity by respecting dependencies.
+                </p>
+                <a
+                  href="https://aws.amazon.com/backup-restore/services/"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View AWS Backup
+                </a>
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  Zheng, L., Wu, Y., Huang, J., Liu, P., Wu, J. (2021).
+                  Restoring Survivable Spanning Tree: An Alternative Algorithm.
+                  In: Ning, L., Chau, V., Lau, F. (eds) Parallel Architectures,
+                  Algorithms and Programming. PAAP 2020. Communications in
+                  Computer and Information Science, vol 1362. Springer,
+                  Singapore. https://doi.org/10.1007/978-981-16-0010-4_1
+                </p>
+                <a
+                  href="https://link.springer.com/chapter/10.1007/978-981-16-0010-4_1"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="elements elemlast">
+            <img src="./conjestion.jpg" alt="" />
+            <h1>Conjestion control using Dijkstra's Algorithm</h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                  Implementing Dijkstra's algorithm to find the shortest paths
+                  from a given source node to all other nodes in a network
+                  represented by an adjacency matrix. Useful for finding the
+                  shortest paths between nodes in a graph, which can help
+                  identify routes with high traffic or potential congestion
+                  points.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Dijkstra's Algorithm</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Dijsktra'sAlgorithm.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                  The program initializes an adjacency matrix for a network,
+                  computes shortest paths using Dijkstra's algorithm from a
+                  specified source node, and outputs the shortest path distances
+                  to all other nodes from the source.
+                </p>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/ques3.drawio.png"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View the graph
+                </a>
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  A. Candra, M. A. Budiman and K. Hartanto, "Dijkstra's and
+                  A-Star in Finding the Shortest Path: a Tutorial," 2020
+                  International Conference on Data Science, Artificial
+                  Intelligence, and Business Analytics (DATABIA), Medan,
+                  Indonesia, 2020, pp. 28-32, doi:
+                  10.1109/DATABIA50434.2020.9190342. keywords: {Computer
+                  science;Data science;Business;Shortest path problem;Time
+                  complexity;Tutorials;A-Star;Dijkstra's;Big-Theta;running
+                  time;SPBU},
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/9190342?casa_token=Jsu3BXIoAaoAAAAA:qBjl2DC64Bh8g9JQTKrCCpD_BiarJCIaSKAdCz9cwjfWicgoUOi5CvnuILUhm6Bc3bhwKOMqO5Q"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="elements elemlast">
+            <img src="./astar.png" alt="" />
+            <h1>Shortest path using A*search </h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    A* search algorithm* is typically used for pathfinding and graph traversal, often in scenarios where you need to find the shortest path from a starting node to a goal node in a weighted graph. While Dijkstra's algorithm finds the shortest path by exploring all possible paths equally, A* search improves upon this by using heuristics to guide the search towards the goal more efficiently.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : A * search algorithm</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/A_star_search.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    Given a weighted graph represented as an adjacency matrix, the task is to implement the A* search algorithm to find the shortest path from a specified source node to a destination node
+                </p>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/ques3.drawio.png"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View the graph
+                </a>
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                    A. Candra, M. A. Budiman and K. Hartanto, "Dijkstra's and A-Star in Finding the Shortest Path: a Tutorial," 2020 International Conference on Data Science, Artificial Intelligence, and Business Analytics (DATABIA), Medan, Indonesia, 2020, pp. 28-32, doi: 10.1109/DATABIA50434.2020.9190342. keywords: {Computer science;Data science;Business;Shortest path problem;Time complexity;Tutorials;A-Star;Dijkstra's;Big-Theta;running time;SPBU},
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/9190342?casa_token=Jsu3BXIoAaoAAAAA:qBjl2DC64Bh8g9JQTKrCCpD_BiarJCIaSKAdCz9cwjfWicgoUOi5CvnuILUhm6Bc3bhwKOMqO5Q"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="elements elemlast">
+            <img src="./maxflow.jpg" alt="" />
+            <h1>Maximum Flow Calculation using Ford-Fulkerson</h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    Implementing the Ford-Fulkerson algorithm to determine the maximum flow in a flow network represented by an adjacency matrix.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Ford-Fulkerson Algorithm</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Ford%20Fulkerson.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    The task involves developing a solution to compute the maximum amount of flow that can be sent from a specified source node to a target (sink) node in a flow network. Each edge in the network has a capacity, which dictates the maximum flow that can pass through it. The algorithm should efficiently find the optimal path for flow through the network while respecting these capacity constraints.
+                </p>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/ques6.drawio.png"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View the graph
+                </a>
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  
+                </p>
+                <a
+                  href="https://www.sciencedirect.com/science/article/abs/pii/S2352467721001156"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="elements elemlast">
+            <img src="./netbalancing.jpg" alt="" />
+            <h1>Network Load Balancing using Round Robin </h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    Design and implement a dynamic network load balancing system that distributes incoming requests evenly across multiple nodes using the Round Robin algorithm. The system should efficiently manage node additions, removals, and ensure optimal resource utilization while avoiding congestion.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Round Robin Algorithm</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/RoundRobin.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    In modern network infrastructures, ensuring optimal performance and resource utilization is crucial. Dynamic load balancing systems help distribute incoming traffic across multiple servers or nodes to prevent overload on any single node and to improve overall system reliability and response times. The Round Robin algorithm is a simple yet effective approach to achieve this by cyclically routing requests to each available node in turn.
+                </p>
+                <!-- <a
+                  href="#"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View AWS autoscaling
+                </a> -->
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  
+                </p>
+                <a
+                  href="https://avinetworks.com/glossary/round-robin-load-balancing/"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="elements elemlast">
+            <img src="./datasynchr.png" alt="" />
+            <h1>Data Synchronization using Subsequence</h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    Implement a parallel processing system to reconcile differences between distributed datasets efficiently using the Longest Common Subsequence (LCS) algorithm.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Dynamic Programming- Longest Common Subsequence</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Longest%20Common%20Sequence.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    Utilize multiple processes to compute different parts of the LCS matrix concurrently, using shared memory and synchronization primitives to manage inter-process communication and ensure data consistency.
+                </p>
+                <!-- <a
+                  href="#"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View AWS autoscaling
+                </a> -->
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/6226388?casa_token=W3D1zAMUrq0AAAAA:34XgFIbFzmAXEldPLJ4K0oRWf8aBS3otVNb5nIGN3C9Fl5L_tnSvf7c7YYJ7copRiOFBQR68w9E"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="elements elemlast">
+            <img src="./nettraffic.png" alt="" />
+            <h1>Analyzing Network Traffic using Kadane's Algorithm</h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    Identify periods of high traffic in network logs to detect potential congestion or anomalies.
+
+
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Kadane's Algorithm
+                </h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Kadane's%20Algorithm.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    Use Kadane's algorithm to find the contiguous subarray with the maximum sum, representing the period of highest traffic in network logs.
+
+
+                </p>
+                <!-- <a
+                  href="#"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View AWS autoscaling
+                </a> -->
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  
+                </p>
+                <a
+                  href="https://medium.com/@tejovardhanmakineni/kadanes-algorithm-explained-d8ce88a5b98c"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="elements elemlast">
+            <img src="./ensuring.avif" alt="" />
+            <h1>Ensuring Network Reliability
+            </h1> 
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    Optimize network reliability by maintaining a balanced distribution of nodes and connections.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Red Black Tree,Binary Search</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Red%20Black%20Tree.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    Use Red-Black Trees to ensure balanced and efficient management of network nodes, providing quick access and modifications, which helps maintain network reliability and performance.
+
+                </p>
+                <!-- <a
+                  href="#"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View AWS autoscaling
+                </a> -->
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/5470923?casa_token=2mXt9Sda4K0AAAAA:Jt8U6B7qpPrMvj7Md7T06GbcRqhI7aIxTVqG0cqhdkuzMiNV-3nmZaUAVZFmiNFLLPUTF1OBu14"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="elements elemlast">
+            <img src="./network-congestion.jpg" alt="" />
+            <h1>Network Congestion Management
+            </h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    Implement real-time monitoring of network traffic to detect congestion by tracking packet sizes over a sliding window; adjust routing policies based on detected congestion levels for efficient data transmission.
+                </p>
+              </div>
+
+              <div class="algoused">
+                <h3>Algorithm used : Sliding Window Algorithm</h3>
+                <h5></h5>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/Sliding%20window.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+              </div>
+            </div>
+
+            <div class="downside">
+              <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    To address the issue of network congestion, we implement a Sliding Window algorithm. This algorithm allows us to monitor traffic over a specified window of time. By keeping track of the sum of packet sizes within the window, we can detect periods of high traffic. If the sum exceeds a predefined threshold, congestion is detected, and appropriate measures, such as adjusting routing policies, are taken. This solution ensures that network traffic is managed dynamically and congestion is alleviated promptly. 
+                </p>
+                <!-- <a
+                  href="#"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View AWS autoscaling
+                </a> -->
+              </div>
+              <div class="reference">
+                <h4>Reference</h4>
+                <p>
+                  
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/8855399"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reference
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          
+          <div class="elements elemlast">
+            <img src="./scalable.jpg" alt="" />
+            <h1>Building for the Scalability</h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                    One of my apps crashed just as it started gaining traction because the backend couldn’t handle the load. Plan for success from the start. Use scalable infrastructure like AWS, Azure, or Google Cloud. Optimize your code to handle growth smoothly.
+                </p>
+                <a
+                  href="https://x.com/StevenHHB/status/1798128280215638103"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View problem
+                </a>
+              </div>
+            <div class="solution">
+                <h3>SOLUTION</h3>
+                <p>
+                    To apply arithmetic problem-solving logic and algorithms to the Auto Scaling configuration scenario, we'll simulate a situation where we adjust the number of instances in an Auto Scaling group based on arithmetic calculations. This might involve dynamically scaling the number of instances based on the CPU utilization metrics.
+                </p>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/problem1.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
                 
-                <a href="https://x.com/StevenHHB/status/1798128280215638103">View the problem</a>
-                <br><br>
-                <h3>Solution 1 - Scalability Solution</h3>
-                <p>Description: To apply arithmetic problem-solving logic and algorithms to the Auto Scaling configuration scenario, we'll simulate a situation where we adjust the number of instances in an Auto Scaling group based on arithmetic calculations. This might involve dynamically scaling the number of instances based on the CPU utilization metrics.</p>
-                <a href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/problem1.cpp">View Solution Code</a>
-            </article>
+              </div>
+            
+          </div>
+
+          <div class="elements elemlast">
+            <img src="https://krontech.com/_upload/blogimages/what-is-network-performance-monitoring-how-does-it-work_blog.jpg" alt="" />
+            <h1>Efficient Network Performance Monitoring using Fenwick Tree(BIT)
+            </h1>
+          </div>
+          <div class="extra">
+            <div class="upside">
+              <div class="prob-desc">
+                <h3>Problem Description</h3>
+                <p>
+                  Efficiently managing real-time performance metrics like latency, bandwidth usage, and packet loss in expanding computer networks using Fenwick trees allows for swift querying and updating capabilities on immense data volumes.                </p>
+                <a
+                  href="https://www.ripublication.com/ijaer10/ijaerv10n5_100.pdf"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View problem
+                </a>
+              </div>
+            <div class="solution">
+              <h3>Algorithm used : Fenwick Tree</h3>
+
+                <h3>SOLUTION</h3>
+                <p>
+                  Implementing a Fenwick Tree enables efficient querying and updating of performance metrics. Its logarithmic time complexity supports dynamic updates and quick responses to cumulative metric queries, ensuring optimal network performance monitoring and anomaly detection.                </p>
+                <a
+                  href="https://github.com/RutujaDC/Portfolio-Solutions/blob/main/FenwickTree.cpp"
+                  class="animated-button1"
+                  style="text-decoration: none; margin-top: 2vw"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  View Solution Code
+                </a>
+                
+              </div>
+            
+          </div>
 
          
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Rutuja D Chikkorde. All rights reserved.</p>
-    </footer>
-</body>
+
+
+
+
+
+
+          
+         
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="page5">
+        <!-- <h2>Mentions Clients</h2>
+        <div
+          class="box"
+          data-image="https://images.unsplash.com/photo-1688362809005-e1d27bf427ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDd8Ym84alFLVGFFMFl8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        >
+          <h3>Verizon</h3>
+          <h4>2021</h4>
+        </div>
+        <div
+          class="box"
+          data-image="https://images.unsplash.com/photo-1688232543149-5602b136ba11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+        >
+          <h3>Verizon</h3>
+          <h4>2021</h4>
+        </div>
+        <div
+          class="box"
+          data-image="https://images.unsplash.com/photo-1688103920333-117afda88518?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMwfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+        >
+          <h3>Verizon</h3>
+          <h4>2021</h4>
+        </div>
+        <div
+          class="box"
+          data-image="https://images.unsplash.com/photo-1687913161653-7cddb0ba09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
+        >
+          <h3>Verizon</h3>
+          <h4>2021</h4>
+        </div>
+        <div
+          class="box"
+          data-image="https://images.unsplash.com/photo-1686904423955-b928225c6488?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg1fGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+        >
+          <h3>Verizon</h3>
+          <h4>2021</h4>
+        </div> -->
+        <a href="https://github.com/RutujaDC/Portfolio-Solutions" style="text-decoration: none;">
+            <div class="page14-inner">
+                <h1>Github Solutions</h1>
+               
+                <i class="ri-arrow-right-up-line"></i>
+                <div class="center14"></div>
+            </div>
+        </a>
+        <a href="https://www.linkedin.com/in/rutuja-chikkorde-a2a340259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="text-decoration: none;">
+            <div class="page14-inner">
+                <h1>LinkedIn</h1>
+                <i class="ri-arrow-right-up-line"></i>
+                <div class="center14"></div>
+    
+            </div>
+        </a>
+        
+      </div>
+    
+        
+        
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function init() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".main"),
+        smooth: true
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy(".main", {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+        getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        },
+        pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+    });
+
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+    ScrollTrigger.refresh();
+
+}
+
+init()
+
+var crsr = document.querySelector(".cursor")
+var main = document.querySelector(".main")
+document.addEventListener("mousemove",function(dets){
+    crsr.style.left = dets.x + 20+"px"
+    crsr.style.top = dets.y + 20+"px"
+})
+
+gsap.from(".page1 h1,.page1 h2", {
+    y: 10,
+    rotate: 10,
+    opacity: 0,
+    delay: 0.3,
+    duration: 0.7
+})
+var tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        // markers:true,
+        start: "top 27%",
+        end: "top 0",
+        scrub: 3
+    }
+})
+tl.to(".page1 h1", {
+    x: -100,
+}, "anim")
+tl.to(".page1 h2", {
+    x: 100
+}, "anim")
+tl.to(".page1 video", {
+    width: "90%"
+}, "anim")
+
+var tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        // markers:true,
+        start: "top -115%",
+        end: "top -120%",
+        scrub: 3
+    }
+})
+tl2.to(".main", {
+    backgroundColor: "#fff",
+})
+
+var tl3 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        // markers:true,
+        start: "top -280%",
+        end: "top -300%",
+        scrub: 3
+    }
+})
+
+tl3.to(".main",{
+    backgroundColor:"#0F0D0D"
+})
+
+
+
+var tl4 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        // markers:true,
+        start: "top -640%",
+        end: "top -660%",
+        scrub: 3
+    }
+})
+
+tl4.to(".main",{
+    backgroundColor:"#031607"
+})
+var tl5 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        // markers:true,
+        start: "top -960%",
+        end: "top -980%",
+        scrub: 3
+    }
+})
+
+tl5.to(".main",{
+    backgroundColor:"#040519"
+})
+var tl6 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        // markers:true,
+        start: "top -1260%",
+        end: "top -1280%",
+        scrub: 3
+    }
+})
+
+tl6.to(".main",{
+    backgroundColor:"#110202"
+})
+var tl6 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        // markers:true,
+        start: "top -1560%",
+        end: "top -1580%",
+        scrub: 3
+    }
+})
+
+tl6.to(".main",{
+    backgroundColor:"#0f0d0d"
+})
+
+
+
+var boxes = document.querySelectorAll(".box")
+boxes.forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        var att = elem.getAttribute("data-image")
+        crsr.style.width = "470px"
+        crsr.style.height = "370px"
+        crsr.style.borderRadius = "0"
+        crsr.style.backgroundImage = `url(${att})`
+    })
+    elem.addEventListener("mouseleave",function(){
+        elem.style.backgroundColor = "transparent"
+        crsr.style.width = "20px"
+        crsr.style.height = "20px"
+        crsr.style.borderRadius = "50%"
+        crsr.style.backgroundImage = `none`
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var timeout;
+
+const scroll = new LocomotiveScroll({
+  el: document.querySelector(".main"),
+  smooth: true,
+});
+
+function firstPageAnim() {
+  var tl = gsap.timeline();
+
+  tl
+    .to(".boundingelem", {
+      y: 0,
+      ease: Expo.easeInOut,
+      duration: 2,
+      delay: -1,
+      stagger: 0.2,
+    })
+    .from("#herofooter", {
+      y: -10,
+      opacity: 0,
+      duration: 1.5,
+      delay: -1,
+      ease: Expo.easeInOut,
+    });
+}
+
+
+
+
+
+
+document.querySelectorAll(".elements").forEach(function (elem) {
+  var rotate = 0;
+  var diffrot = 0;
+
+  elem.addEventListener("mouseleave", function (dets) {
+    gsap.to(elem.querySelector(".elements img"), {
+      opacity: 0,
+      ease: Power3,
+      duration: 0.5,
+    });
+  });
+
+  elem.addEventListener("mousemove", function (dets) {
+    var diff = dets.clientY - elem.getBoundingClientRect().top;
+    diffrot = dets.clientX - rotate;
+    rotate = dets.clientX;
+    gsap.to(elem.querySelector(".elements img"), {
+      opacity: 1,
+      ease: Power3,
+      top: diff,
+      left: dets.clientX,
+      rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
+    });
+  });
+});
+
+    </script>
+  </body>
 </html>
